@@ -81,7 +81,7 @@
 
   // Players who fall into the void appear at the top of the same dimension and fall back down.
   "void_teleport": {
-    "enabled": false,
+    "enabled": true,
     // empty = every dimension
     "dimensions": [],
     // how many blocks below the bottom of the world it happens
