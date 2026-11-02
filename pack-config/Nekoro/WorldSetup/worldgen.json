@@ -1,0 +1,33 @@
+// Nekoro World Setup: world generation. Changes only affect chunks generated afterwards and need a restart.
+// Everything is off until you turn it on.
+{
+  // only the lowest (floor) or highest (roof, Nether) layer of bedrock, instead of the bumpy 5 layers
+  "flat_bedrock": {
+    "floor": true,
+    "roof": true
+  },
+  // ore veins from vanilla and mods (blocks in #c:ores or with "ore" in their id), and the big
+  // copper and iron veins from 1.18. Granite, diorite, andesite, tuff, dirt and gravel blobs stay.
+  "remove_ores": true,
+  // ores to keep anyway: placed feature ids ("minecraft:ore_coal_upper"), block ids or block tags
+  "keep_ores": [],
+  "remove_lava_lakes": true,
+  // lava springs: lava falling in caves and the hidden lava pockets in the Nether
+  "remove_lava_springs": true,
+  // the lava layer in caves below Y -54 (becomes air) and lava in deep aquifers (becomes water)
+  "remove_deep_lava": true,
+  // classic cave tunnels and canyons. The big caves from 1.18 are part of the terrain and stay.
+  "remove_carvers": true,
+  // the long winding spaghetti caves, thin noodle caves and cave entrances from the surface.
+  // The big open caves stay. Fewer tunnels also means faster generation and fewer hidden mob spawns.
+  "remove_spaghetti_caves": true,
+  // the big open caves too (vanilla cheese caves, Terralith's mega caves). With this and the two above
+  // almost nothing is hollow underground: the fastest generation and no hidden mob spawns.
+  "remove_big_caves": true,
+  // amethyst geodes and other geodes from mods
+  "remove_geodes": true,
+  // when biome mods put the same features (often flowers and grass) in opposite orders, vanilla stops
+  // world generation with "Feature order cycle found". On (the default), the world generates anyway:
+  // only the placing order of those features changes. The features involved are written to the log.
+  "fix_feature_order": true
+}

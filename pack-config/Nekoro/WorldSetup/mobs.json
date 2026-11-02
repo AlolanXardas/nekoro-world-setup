@@ -1,0 +1,21 @@
+// Nekoro World Setup: which mobs may spawn. Nekoro Pokemon modpack: only Pokemon (Cobblemon).
+// Only living mobs are checked;
+// items, boats, armor stands and similar entities are never touched. /reload applies changes.
+{
+  "enabled": true,
+  // "block": the mobs listed below cannot spawn
+  // "allow": only the mobs listed below can spawn, every other mob is blocked
+  "mode": "allow",
+  // ids ("minecraft:zombie"), whole mods ("minecraft:*") or entity tags ("#minecraft:raiders")
+  "mobs": ["cobblemon:*"],
+  // the kinds of spawning that are checked; kinds not listed are always allowed.
+  // All kinds: natural, chunk_generation, structure, spawner, trial_spawner, patrol, event, reinforcement,
+  // jockey, mob_summoned, conversion, breeding, triggered, bucket, spawn_egg, command, dispenser
+  "spawn_types": ["natural", "chunk_generation", "structure", "spawner", "trial_spawner", "patrol",
+                  "event", "reinforcement", "jockey", "mob_summoned"],
+  // also remove blocked mobs that already exist when their chunk loads (never named, tamed or leashed ones)
+  "remove_existing": false,
+  // also block mobs that appear without a normal spawn: bees leaving their hive, babies from breeding,
+  // mob conversions, built golems, /summon with extra data. Spawn eggs and plain /summon stay allowed.
+  "block_other_spawns": true
+}

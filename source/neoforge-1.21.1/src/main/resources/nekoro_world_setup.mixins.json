@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.xardas.nekoroworldsetup.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AnvilMenuMixin",
+    "BeehiveMixin",
+    "DensityHolderMixin",
+    "EnchantmentMixin",
+    "ExperienceOrbMendingMixin",
+    "FeatureSorterMixin",
+    "ItemEnchantabilityMixin",
+    "NoiseBasedAquiferMixin",
+    "NoiseBasedChunkGeneratorMixin",
+    "NoiseGeneratorSettingsMixin",
+    "NoiseMixin",
+    "PlayerProjectileMixin",
+    "StemBlockAccessor",
+    "VerticalGradientConditionMixin"
+  ],
+  "client": [
+    "AnvilScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

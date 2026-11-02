@@ -1,0 +1,32 @@
+// Nekoro World Setup: what happens when a world starts and when players join.
+// Everything is off until you turn it on. Changes need a server restart.
+{
+  // Game rules, set the first time a world starts with this mod. Any game rule works, modded ones too.
+  // "every_start": true sets them again on every server start (also if someone changed them in game).
+  "gamerules": {
+    "enabled": false,
+    "every_start": false,
+    "rules": {
+      "doInsomnia": false,
+      "doPatrolSpawning": false,
+      "doTraderSpawning": false
+    }
+  },
+
+  // Commands run by the server with operator permissions. Write them without the leading /.
+  // "when": "world_created"      the first time a world starts with this mod
+  //         "server_start"       every time the server starts
+  //         "player_first_join"  the first time a player joins this world (@s is the player)
+  //         "player_join"        every time a player joins (@s is the player)
+  "commands": {
+    "enabled": false,
+    "list": [
+      { "when": "world_created", "command": "worldborder set 8001" },
+      { "when": "player_first_join", "command": "give @s minecraft:bread 8" }
+    ]
+  },
+
+  // Datapacks (zip files or folders) placed in config/Nekoro/WorldSetup/datapacks are loaded in every world,
+  // new and existing ones. The folder is created when this is turned on.
+  "global_datapacks": false
+}

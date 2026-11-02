@@ -1,0 +1,29 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+    modId = "nekoro_world_setup"
+    version = "${version}"
+    displayName = "Nekoro World Setup"
+    authors = "Alolan Xardas"
+    description = '''
+World rules in config files: start commands and game rules, global datapacks, higher enchantment levels, mob spawn filters, recipe changes, water and lava behaviour, a wrapping world edge, void teleport, bone meal on more plants and world generation tweaks. Apart from a fix for the "Feature order cycle found" crash, everything is off until you turn it on.
+'''
+
+[[dependencies.nekoro_world_setup]]
+    modId = "neoforge"
+    type = "required"
+    versionRange = "[21.1,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.nekoro_world_setup]]
+    modId = "minecraft"
+    type = "required"
+    versionRange = "[1.21.1,1.22)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[mixins]]
+    config = "nekoro_world_setup.mixins.json"

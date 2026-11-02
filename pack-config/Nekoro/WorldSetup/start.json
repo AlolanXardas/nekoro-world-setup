@@ -1,0 +1,44 @@
+// Nekoro World Setup: what happens when a world starts and when players join.
+// Nekoro Pokemon modpack settings (taken over from World Start Commands).
+{
+  // Game rules, set the first time a world starts with this mod. Any game rule works, modded ones too.
+  // "every_start": true sets them again on every server start (also if someone changed them in game).
+  "gamerules": {
+    "enabled": true,
+    "every_start": false,
+    "rules": {
+      "keepInventory": true,
+      "doMobSpawning": false,
+      "doPatrolSpawning": false,
+      "doFireTick": false,
+      "disableElytraMovementCheck": true,
+      "disableRaids": true,
+      "doInsomnia": false,
+      "doTraderSpawning": false,
+      "doWardenSpawning": false,
+      "maxEntityCramming": 4,
+      "mobGriefing": false,
+      "projectilesCanBreakBlocks": false,
+      "randomTickSpeed": 1,
+      "spawnChunkRadius": 0,
+      "spawnRadius": 0
+    }
+  },
+
+  // Commands run by the server with operator permissions. Write them without the leading /.
+  // "when": "world_created"      the first time a world starts with this mod
+  //         "server_start"       every time the server starts
+  //         "player_first_join"  the first time a player joins this world (@s is the player)
+  //         "player_join"        every time a player joins (@s is the player)
+  "commands": {
+    "enabled": true,
+    "list": [
+      { "when": "world_created", "command": "worldborder center 0 0" },
+      { "when": "world_created", "command": "worldborder set 8001" }
+    ]
+  },
+
+  // Datapacks (zip files or folders) placed in config/Nekoro/WorldSetup/datapacks are loaded in every world,
+  // new and existing ones. The folder is created when this is turned on.
+  "global_datapacks": false
+}

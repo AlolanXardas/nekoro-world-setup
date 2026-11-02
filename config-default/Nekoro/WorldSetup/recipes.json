@@ -1,0 +1,20 @@
+// Nekoro World Setup: recipe changes. They are applied every time datapacks load, so /reload works.
+{
+  "remove": {
+    "enabled": false,
+    // removes every recipe that makes these items: ids, whole mods ("projecte:*") or item tags ("#minecraft:boats")
+    "outputs": ["minecraft:tnt"],
+    // removes recipes by recipe id, or all recipes of a mod ("projecte:*")
+    "ids": []
+  },
+  "add": {
+    // 2 slabs on top of each other make 1 block, for every slab that has a 3 blocks -> 6 slabs recipe
+    "slabs_to_blocks": false,
+    // 4 stairs in a square make 3 blocks, for every stairs that has a 6 blocks -> 4 stairs recipe
+    "stairs_to_blocks": false,
+    // 2 logs on top of each other make 16 sticks
+    "logs_to_sticks": false,
+    // 8 logs in a ring make 4 chests
+    "logs_to_chests": false
+  }
+}

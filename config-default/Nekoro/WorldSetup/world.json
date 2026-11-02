@@ -1,0 +1,120 @@
+// Nekoro World Setup: rules that change how the world behaves.
+// Everything is off until you turn it on. /reload applies changes to this file.
+{
+  // Higher maximum enchantment levels: enchanting table, anvil, books and /enchant.
+  "enchantments": {
+    "enabled": false,
+    // new maximum for every enchantment; enchantments that already go higher keep their own maximum
+    "max_level": 10,
+    // true keeps enchantments that only have level I (Mending, Silk Touch, Infinity...) at I
+    "skip_single_level": false,
+    // a different maximum for single enchantments, e.g. { "minecraft:sharpness": 15, "minecraft:mending": 1 }
+    "overrides": {},
+    // the anvil refuses anything that costs this many levels or more ("Too Expensive!").
+    // Vanilla is 40. Higher enchantment levels make combining books expensive; 0 means no limit.
+    "anvil_cost_limit": 40,
+    // enchantments that normally exclude each other but may now be combined (anvil and enchanting table).
+    // Groups: "damage" (Sharpness/Smite/Bane), "armor" (the Protections), "bow" (Infinity/Mending),
+    // "crossbow" (Multishot/Piercing), "mining" (Fortune/Silk Touch), "boots" (Frost Walker/Depth Strider),
+    // "riptide" (Riptide/Loyalty/Channeling), any enchantment tag ("#mymod:my_set"), or "all"
+    "compatible": [],
+    // items an enchantment may go on besides its normal ones, e.g. { "minecraft:looting": ["#minecraft:axes"] }
+    "extra_items": {},
+    // small enchantment rules (these work even with "enabled" above off)
+    "extras": {
+      // any Feather Falling stops you from trampling farmland
+      "feather_falling_protects_farmland": false,
+      // a bow with Infinity shoots without any arrow in the inventory
+      "infinity_without_arrows": false,
+      // Looting raises the XP mobs drop and Fortune the XP from ores: level * (level + 1) / 10 times more
+      // (Looting III: +120%, X: +1100%), but at most xp_bonus_max more points (like Universal Enchants)
+      "looting_and_fortune_boost_xp": false,
+      "xp_bonus_max": 50,
+      // no short immunity after a projectile hit, so all arrows of Multishot hit
+      "no_projectile_immunity": false,
+      // shears and shields can be enchanted in the enchanting table, not only with an anvil
+      "enchantable_shears": false,
+      "enchantable_shields": false,
+      // every Mending level above I repairs this much more per XP point, so it also uses less XP:
+      // 0.5 makes II repair 1.5x and X 5.5x as much, 1.0 makes X repair 10x. 0 = vanilla
+      "mending_bonus_per_level": 0
+    }
+  },
+
+  // Digging a block next to water turns its place into water right away,
+  // so beaches and lakes do not end up with water flowing everywhere.
+  "water_fill": {
+    "enabled": false,
+    // only these blocks: ids, whole mods ("minecraft:*") or tags ("#minecraft:sand").
+    // Built blocks like planks or bricks are left out on purpose, so houses next to water cannot get flooded.
+    "blocks": ["#minecraft:sand", "#c:sands", "#minecraft:dirt", "minecraft:gravel", "#c:gravels",
+               "minecraft:clay", "#minecraft:base_stone_overworld", "#c:stones"],
+    // how many water source blocks (on the sides or above) must touch the dug block, 1 to 5
+    "sources_needed": 1,
+    // also fill small empty holes right next to it, at the same height or lower
+    "flood_holes": true
+  },
+
+  // Blocks that lava and water make when they meet. true = that block is not made, the fluids stay as they are.
+  "fluid_blocks": {
+    "enabled": false,
+    "no_cobblestone": true,
+    "no_stone": true,
+    "no_basalt": false,
+    // obsidian is needed for Nether portals
+    "no_obsidian": false
+  },
+
+  // Walking out of a square area takes players to the opposite side, like on a round planet.
+  // This does not change the vanilla world border: make that one bigger than this area, or leave it off.
+  "border_wrap": {
+    "enabled": false,
+    "dimensions": ["minecraft:overworld"],
+    "center_x": 0,
+    "center_z": 0,
+    // half the width of the area: 4000 means from 4000 blocks before the center to 4000 after it
+    "radius": 4000,
+    // how far inside the opposite edge players land, so they do not bounce back and forth
+    // (far enough that walking over the edge again and again cannot be used to load lots of chunks)
+    "move_inside": 100
+  },
+
+  // Players who fall into the void appear at the top of the same dimension and fall back down.
+  "void_teleport": {
+    "enabled": false,
+    // empty = every dimension
+    "dimensions": [],
+    // how many blocks below the bottom of the world it happens
+    "depth": 10,
+    "no_fall_damage": true
+  },
+  // Bone meal also works on plants and blocks vanilla ignores (like Universal Bone Meal). Each one can be turned off.
+  "bone_meal": {
+    "enabled": false,
+    // one block more, up to the height they reach on their own (3)
+    "sugar_cane": true,
+    "cactus": true,
+    // vines grow one block further down
+    "vines": true,
+    "nether_wart": true,
+    // a fully grown melon or pumpkin stem makes its fruit right away
+    "fruit_stems": true,
+    // lily pads spread over still water around them
+    "lily_pad": true,
+    // small flowers and dead bushes spread around them
+    "small_flowers": true,
+    "dead_bush": true,
+    // the nearest chorus flower of the plant grows (up to 48 blocks of stem above)
+    "chorus": true,
+    // coral in a warm ocean grows into a coral tree (needs some free water above)
+    "corals": true,
+    // drops one more spore blossom
+    "spore_blossom": true,
+    // grows ferns, sometimes large ferns and sweet berry bushes on podzol around it
+    "podzol": true,
+    // grows brown and red mushrooms on mycelium around it
+    "mycelium": true,
+    // dirt (also coarse and rooted) next to grass or mycelium turns into it
+    "dirt": true
+  }
+}
