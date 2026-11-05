@@ -2,7 +2,7 @@
 
 World rules for modpacks and servers, all set in config files: start commands and game rules, global datapacks, higher enchantment levels, mob spawn filters, recipe changes, water and lava behaviour, a wrapping world edge, void teleport, bone meal on more plants and world generation changes.
 
-Made mainly for my Nekoro Pokemon modpack, but it works in any world. It replaces several mods I used there (World Start Commands and Global Gamerules, Paxi, Universal Enchants, Pretty Beaches, Cobble Gen Haters, Bad Mobs, Universal Bone Meal, Flat Bedrock, No Caves Mod and the part of CraftTweaker I used). Most of them probably do their job better; this mod keeps exactly what my modpack needs up to date.
+Made for my Nekoro Pokemon modpack, but it works in any world. It replaces several mods I used there (World Start Commands and Global Gamerules, Paxi, Universal Enchants, Pretty Beaches, Cobble Gen Haters, Bad Mobs, Universal Bone Meal, Flat Bedrock, No Caves Mod and the part of CraftTweaker I used). Many of those mods may be better than mine.
 
 Download: [CurseForge](https://www.curseforge.com/minecraft/search?search=nekoro+world+setup)
 

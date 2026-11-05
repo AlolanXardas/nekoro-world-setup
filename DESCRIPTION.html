@@ -1,18 +1,116 @@
-<p style="text-align: center;"><span style="color: #b96ad9;">If you like my mod but it&rsquo;s not available for the Minecraft version or mod loader you need, let me know in the comments or on <a href="https://discord.gg/QxRtHCJ57R" target="_blank" rel="nofollow noopener"><span style="color: #3598db; text-decoration: underline;">Discord</span></a>, and I&rsquo;ll try to make it happen!<br>If you find a bug, have an idea for an improvement or would like a similar small mod, just let me know and I&rsquo;ll do my best.</span></p>
-<p style="text-align: center;"><span style="color: #fff;">World rules for modpacks and servers, all set in config files: start commands and game rules, global datapacks, higher enchantment levels, mob spawn filters, recipe changes, water and lava behaviour, a wrapping world edge, void teleport, bone meal on more plants and world generation changes.<br>Made mainly for my <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/modpacks/nekoropolia" target="_blank" rel="nofollow noopener">Nekoro Pokemon</a> modpack, but it works in any world.</span></p>
-<h3 style="text-align: center;"><span style="color: #b96ad9;">Why this mod</span></h3>
-<p style="text-align: center;"><span style="color: #fff;">This mod replaces several mods I used in my modpack. They are linked below, next to the feature that replaces them. Most of them probably do their job better than my version, so try them first.<br>I made my own so my modpack always has up-to-date mods with exactly what I need: things I was missing in the originals, and without the parts I don&rsquo;t use.<br><strong>Every feature can be turned off in the config.</strong> Apart from a fix for a world generation crash, everything starts off, so the mod does nothing until you turn something on.</span></p>
-<h3 style="text-align: center;"><span style="color: #b96ad9;">Features</span></h3>
-<p style="text-align: center;"><span style="color: #fff;">All files are in <strong>config/Nekoro/WorldSetup/</strong> and every option is explained in the file.</span></p>
-<p style="text-align: center;"><span style="color: #fff;"><strong>start.json</strong><br>&bull; Game rules set when a world is created (modded game rules too), or again on every server start<br>&bull; Commands run when the world is created, on every server start, on a player&rsquo;s first join or on every join<br>Replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/world-start-commands-and-global-gamerules" target="_blank" rel="nofollow noopener">World Start Commands and Global Gamerules</a><br>&bull; Datapacks from config/Nekoro/WorldSetup/datapacks load in every world, new and existing<br>Replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/paxi-neoforge" target="_blank" rel="nofollow noopener">Paxi</a></span></p>
-<p style="text-align: center;"><span style="color: #fff;"><strong>world.json</strong><br>&bull; Higher maximum enchantment levels for the enchanting table, anvil, books and /enchant, with a different maximum per enchantment if you want, and an adjustable or removed &ldquo;Too Expensive!&rdquo; limit<br>&bull; Enchantments that normally exclude each other can be combined (Sharpness with Smite, the Protections, Fortune with Silk Touch...), and enchantments can go on extra items, like Looting on axes<br>&bull; Small enchantment rules: Feather Falling protects farmland, Infinity without arrows, more XP from Looting and Fortune, all Multishot arrows hit, shears and shields in the enchanting table<br>Replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/universal-enchants" target="_blank" rel="nofollow noopener">Universal Enchants</a><br>&bull; Every Mending level above I repairs more per XP point<br>&bull; Higher Silk Touch levels also work with my Nekoro Random Drop mod: rules with &ldquo;silk_touch&rdquo;: &ldquo;bonus&rdquo; get a higher chance with each level<br>&bull; Digging sand, dirt or gravel next to water fills its place with water right away, so beaches and lakes don&rsquo;t end up with water flowing everywhere. Built blocks are left out, so houses next to water can&rsquo;t get flooded<br>Replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/pretty-beaches" target="_blank" rel="nofollow noopener">Pretty Beaches</a><br>&bull; Lava and water no longer make cobblestone or stone (basalt and obsidian can be turned off too)<br>Replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/cobble-gen-haters" target="_blank" rel="nofollow noopener">Cobble Gen Haters</a><br>&bull; Walking out of a square area takes players to the opposite side, like on a round planet<br>&bull; Players who fall into the void appear at the top of the dimension and fall back down<br>&bull; Bone meal also works on sugar cane, cactus, vines, nether wart, full melon and pumpkin stems, lily pads, small flowers, dead bushes, chorus, coral in warm oceans, spore blossoms, podzol, mycelium and dirt next to grass, each one with its own option<br>Replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/universal-bone-meal" target="_blank" rel="nofollow noopener">Universal Bone Meal</a></span></p>
-<p style="text-align: center;"><span style="color: #fff;"><strong>mobs.json</strong><br>&bull; Block mobs, or allow only the ones you list, by id, by whole mod or by tag<br>&bull; Choose which kinds of spawning are checked (natural, spawners, structures, breeding, spawn eggs...)<br>&bull; Optionally remove blocked mobs that already exist, and block mobs that appear without a normal spawn, like bees leaving hives<br>Replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/bad-mobs" target="_blank" rel="nofollow noopener">Bad Mobs</a></span></p>
-<p style="text-align: center;"><span style="color: #fff;"><strong>worldgen.json</strong><br>&bull; Flat bedrock floor and Nether roof<br>Replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/flat-bedrock" target="_blank" rel="nofollow noopener">Flat Bedrock</a><br>&bull; Remove ores from vanilla and mods, the big ore veins too, with a list of ores to keep<br>In my modpack this replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/caveore" target="_blank" rel="nofollow noopener">Cave Spelunking</a>: ores come from mining stone with my Nekoro Random Drop mod instead<br>&bull; Remove cave tunnels and canyons, spaghetti and noodle caves, the big open caves (Terralith&rsquo;s too), lava lakes, lava springs, the deep lava layer and geodes<br>Replaces <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/no-caves-mod" target="_blank" rel="nofollow noopener">No Caves Mod</a><br>&bull; When biome mods place the same features in opposite orders, vanilla stops world generation with &ldquo;Feature order cycle found&rdquo;. This fix (on by default) lets the world generate and writes the features involved to the log</span></p>
-<p style="text-align: center;"><span style="color: #fff;"><strong>recipes.json</strong><br>&bull; Remove recipes by result, by recipe id, by mod or by tag<br>&bull; Add recipes: slabs and stairs back to blocks, logs to sticks, logs to chests<br>Replaces the part of <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/crafttweaker" target="_blank" rel="nofollow noopener">CraftTweaker</a> I used (CraftTweaker can do far more)</span></p>
-<p style="text-align: center;"><span style="color: #fff;">/reload applies changes to world.json, mobs.json and recipes.json. start.json and worldgen.json need a restart, and world generation changes only affect new chunks.</span></p>
-<h3 style="text-align: center;"><span style="color: #b96ad9;">Requires</span></h3>
-<p style="text-align: center;"><span style="color: #fff;">Minecraft 1.21.1: NeoForge or Fabric<br>Fabric also needs</span> <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" target="_blank" rel="nofollow noopener">Fabric API</a></p>
-<h3 style="text-align: center;"><span style="color: #b96ad9;">AI Usage</span></h3>
-<p style="text-align: center;"><span style="color: #fff;">I use AI (Claude) only for writing code and editing text.<br>I don&rsquo;t like releasing things that aren&rsquo;t in the best shape I can make them.<br>AI saves me many hours on the parts I find tedious, which leaves me more time for the creative side.<br>Anything I didn&rsquo;t make is listed in the Credits section, together with the terms I use it under.</span></p>
-<h3 style="text-align: center;"><span style="color: #b96ad9;">Credits</span></h3>
-<p style="text-align: center;"><span style="color: #fff;">Mod by Alolan Xardas, code written with Claude, released under the MIT License.<br>Thanks to the authors of the mods listed above.</span></p>
+<p style="text-align: center;">World rules for modpacks and servers, all set in config files.<br>Everything starts off, apart from a fix for a world generation crash, so the mod does nothing until you turn something on.<br>Made for my <a style="color: #3598db;" href="https://www.curseforge.com/minecraft/modpacks/nekoropolia" target="_blank" rel="nofollow noopener">Nekoro Pokemon</a> modpack, but it works in any world.</p>
+<p style="text-align: center;"><strong>Required on the client and the server.</strong></p>
+<h2 style="text-align: center;"><span style="color: #b96ad9; font-size: 18pt;">Work in progress</span></h2>
+<p style="text-align: center;">All my projects are being prepared for a big update of my modpack. I'm changing them step by step so they fit together, and they should be ready by the end of this year.<br>Many graphics are temporary until the mechanics of all my mods are finished.</p>
+<p style="text-align: center;">Found a bug, have an idea, or need this mod on another loader or Minecraft version?<br>Tell me in the comments or on <a style="color: #3598db;" href="https://discord.gg/QxRtHCJ57R" target="_blank" rel="nofollow noopener">Discord</a>.</p>
+<h2><span style="color: #b96ad9; font-size: 18pt;">Features</span></h2>
+<p><span style="font-size: 14pt;"><strong>Start commands and game rules</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>Game rules set when a world is created, or again on every server start. Modded game rules too.</li>
+<li>Commands run when the world is created, on every server start, on a player's first join or on every join.</li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Enchantment levels</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>Higher maximum levels for the enchanting table, anvil, books and /enchant, with a different maximum per enchantment if you want.</li>
+<li>An adjustable or removed "Too Expensive!" limit.</li>
+<li>Every Mending level above I repairs more per XP point.</li>
+<li>Higher Silk Touch levels also work with Nekoro Random Drop: rules with "silk_touch": "bonus" get a higher chance with each level.</li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Enchantment rules</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>Enchantments that normally exclude each other can be combined: Sharpness with Smite, the Protections, Fortune with Silk Touch...</li>
+<li>Enchantments can go on extra items, like Looting on axes.</li>
+<li>Feather Falling protects farmland, Infinity works without arrows, Looting and Fortune give more XP, all Multishot arrows hit, shears and shields work in the enchanting table.</li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Bone meal</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>Also works on sugar cane, cactus, vines, nether wart, full melon and pumpkin stems, lily pads, small flowers, dead bushes, chorus, coral in warm oceans, spore blossoms, podzol, mycelium and dirt next to grass.</li>
+<li>Each one has its own option.</li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Mob filters</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>Block mobs, or allow only the ones you list, by id, whole mod or tag.</li>
+<li>Choose which kinds of spawning are checked: natural, spawners, structures, breeding, spawn eggs...</li>
+<li>Optionally remove blocked mobs that already exist, and block mobs that appear without a normal spawn, like bees leaving hives.</li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Ore removal</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>Remove ores from vanilla and mods, the big ore veins too, with a list of ores to keep.</li>
+<li>In my modpack ores come from mining stone with Nekoro Random Drop instead.</li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Cave removal</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>Remove cave tunnels and canyons, spaghetti and noodle caves, and the big open caves, Terralith's too.</li>
+<li>Remove lava lakes, lava springs, the deep lava layer and geodes.</li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Recipes</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>Remove recipes by result, recipe id, mod or tag.</li>
+<li>Add recipes: slabs and stairs back to blocks, logs to sticks, logs to chests.</li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Other features</strong></span></p>
+<div class="spoiler">
+<ul>
+<li><strong>Global datapacks:</strong> Datapacks from config/Nekoro/WorldSetup/datapacks load in every world, new and existing.</li>
+<li><strong>Water at the shore:</strong> Digging sand, dirt or gravel next to water fills its place with water right away, so beaches don't end up flooded. Built blocks are left out.</li>
+<li><strong>Lava and water:</strong> They no longer make cobblestone or stone. Basalt and obsidian can be turned off too.</li>
+<li><strong>World edge:</strong> Walking out of a square area takes players to the opposite side, like on a round planet.</li>
+<li><strong>Void:</strong> Players who fall into the void appear at the top of the dimension and fall back down.</li>
+<li><strong>Real time:</strong> The time of day can follow the clock of the computer the server runs on.</li>
+<li><strong>Flat bedrock:</strong> A flat bedrock floor and Nether roof.</li>
+<li><strong>Feature order fix:</strong> When biome mods place the same features in opposite orders, vanilla stops world generation with "Feature order cycle found". This fix is on by default, lets the world generate and writes the features to the log.</li>
+</ul>
+</div>
+<h2><span style="color: #b96ad9; font-size: 18pt;">More information</span></h2>
+<p><span style="font-size: 14pt;"><strong>Config</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>All files are in <strong>config/Nekoro/WorldSetup/</strong> and every option is explained in the file.</li>
+<li><strong>start.json:</strong> game rules, commands, datapacks.</li>
+<li><strong>world.json:</strong> enchantments, bone meal, water and lava, world edge, void, real time.</li>
+<li><strong>mobs.json:</strong> mob filters.</li>
+<li><strong>worldgen.json:</strong> bedrock, ores, caves, the feature order fix.</li>
+<li><strong>recipes.json:</strong> recipes.</li>
+<li>/reload applies changes to world.json, mobs.json and recipes.json. start.json and worldgen.json need a restart, and world generation changes only affect new chunks.</li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Inspirations</strong></span></p>
+<div class="spoiler">
+<p>Many of these mods may be better than mine. I make my own versions to add the things I was missing and to leave out what I don't need.</p>
+<ul>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/world-start-commands-and-global-gamerules" target="_blank" rel="nofollow noopener">World Start Commands and Global Gamerules</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/paxi-neoforge" target="_blank" rel="nofollow noopener">Paxi</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/universal-enchants" target="_blank" rel="nofollow noopener">Universal Enchants</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/pretty-beaches" target="_blank" rel="nofollow noopener">Pretty Beaches</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/cobble-gen-haters" target="_blank" rel="nofollow noopener">Cobble Gen Haters</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/universal-bone-meal" target="_blank" rel="nofollow noopener">Universal Bone Meal</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/bad-mobs" target="_blank" rel="nofollow noopener">Bad Mobs</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/flat-bedrock" target="_blank" rel="nofollow noopener">Flat Bedrock</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/caveore" target="_blank" rel="nofollow noopener">Cave Spelunking</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/no-caves-mod" target="_blank" rel="nofollow noopener">No Caves Mod</a></li>
+<li><a style="color: #3598db;" href="https://www.curseforge.com/minecraft/mc-mods/crafttweaker" target="_blank" rel="nofollow noopener">CraftTweaker</a></li>
+</ul>
+</div>
+<p><span style="font-size: 14pt;"><strong>Legal</strong></span></p>
+<div class="spoiler">
+<ul>
+<li>Mod by Alolan Xardas, released under the MIT License.</li>
+<li>I use AI (Claude) mainly for coding. I draw the pixel art myself.</li>
+</ul>
+</div>
