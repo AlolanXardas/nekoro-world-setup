@@ -153,6 +153,10 @@ public final class WsConfig {
         public final boolean boneMealMycelium;
         public final boolean boneMealDirt;
 
+        public final boolean realTime;
+        public final double realTimeOffsetHours;
+        public final int realTimeCheckSeconds;
+
         World(JsonObject o) {
             JsonObject e = JsonFile.obj(o, "enchantments");
             enchantments = JsonFile.bool(e, "enabled", false);
@@ -241,6 +245,11 @@ public final class WsConfig {
             boneMealPodzol = JsonFile.bool(m, "podzol", true);
             boneMealMycelium = JsonFile.bool(m, "mycelium", true);
             boneMealDirt = JsonFile.bool(m, "dirt", true);
+
+            JsonObject t = JsonFile.obj(o, "real_time");
+            realTime = JsonFile.bool(t, "enabled", false);
+            realTimeOffsetHours = JsonFile.number(t, "offset_hours", 0);
+            realTimeCheckSeconds = Math.max(1, Math.min(600, JsonFile.integer(t, "check_seconds", 10)));
         }
     }
 
@@ -483,6 +492,15 @@ public final class WsConfig {
                 "mycelium": true,
                 // dirt (also coarse and rooted) next to grass or mycelium turns into it
                 "dirt": true
+              },
+              // The time of day follows the clock of the computer the server runs on (in single player: yours), and
+              // every real day is one Minecraft day. The daylight cycle game rule stays off, so sleeping does not skip the night.
+              "real_time": {
+                "enabled": false,
+                // hours added to the clock (e.g. -2 or 1.5), for a server in a different time zone than its players
+                "offset_hours": 0,
+                // how often the time is set, in seconds (the sun moves about 3 ticks of game time in 10 seconds)
+                "check_seconds": 10
               }
             }
             """;

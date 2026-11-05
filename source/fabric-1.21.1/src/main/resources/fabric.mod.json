@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "nekoro_world_setup",
+  "id": "nekoroworldsetup",
   "version": "${version}",
   "name": "Nekoro World Setup",
   "description": "World rules in config files: start commands and game rules, global datapacks, higher enchantment levels, mob spawn filters, recipe changes, water and lava behaviour, a wrapping world edge, void teleport, bone meal on more plants and world generation tweaks. Apart from a fix for the \"Feature order cycle found\" crash, everything is off until you turn it on.",
@@ -15,8 +15,8 @@
     ]
   },
   "mixins": [
-    "nekoro_world_setup.mixins.json",
-    "nekoro_world_setup.fabric.mixins.json"
+    "nekoroworldsetup.mixins.json",
+    "nekoroworldsetup.fabric.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.0",

@@ -19,7 +19,9 @@ final class SetupData extends SavedData {
 
     static SetupData get(MinecraftServer server) {
         return server.overworld().getDataStorage().computeIfAbsent(
-                new SavedData.Factory<>(SetupData::new, SetupData::load, null), NekoroWorldSetup.MOD_ID);
+                new SavedData.Factory<>(SetupData::new, SetupData::load, null),
+                // the file keeps its first name, so worlds remember what already ran
+                "nekoro_world_setup");
     }
 
     private static SetupData load(CompoundTag tag, HolderLookup.Provider registries) {

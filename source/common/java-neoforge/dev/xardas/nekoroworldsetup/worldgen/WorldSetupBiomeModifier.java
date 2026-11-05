@@ -11,7 +11,7 @@ import net.neoforged.neoforge.common.world.ModifiableBiomeInfo;
 import dev.xardas.nekoroworldsetup.WsConfig;
 
 /**
- * One biome modifier (data/nekoro_world_setup/neoforge/biome_modifier/config.json) that reads worldgen.json
+ * One biome modifier (data/nekoroworldsetup/neoforge/biome_modifier/config.json) that reads worldgen.json
  * and removes ores, geodes, lava lakes, lava springs and carvers from every biome, vanilla and modded.
  */
 public final class WorldSetupBiomeModifier implements BiomeModifier {

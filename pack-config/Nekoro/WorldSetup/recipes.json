@@ -4,7 +4,7 @@
     "enabled": true,
     // Nekoro Pokemon modpack: everything the old CraftTweaker script removed.
     // removes every recipe that makes these items: ids, whole mods ("projecte:*") or item tags ("#minecraft:boats")
-    "outputs": ["minecraft:tnt", "minecraft:tnt_minecart", "minecraft:end_crystal", "minecraft:fire_charge",
+    "outputs": ["nekorocollectoredition:*", "nekoroshop:*", "minecraft:tnt", "minecraft:tnt_minecart", "minecraft:end_crystal", "minecraft:fire_charge",
                   "minecraft:respawn_anchor", "minecraft:beacon", "projecte:white_alchemical_bag",
                   "projecte:orange_alchemical_bag", "projecte:magenta_alchemical_bag",
                   "projecte:light_blue_alchemical_bag", "projecte:yellow_alchemical_bag",

@@ -27,6 +27,7 @@ import net.neoforged.neoforge.event.server.ServerAboutToStartEvent;
 import net.neoforged.neoforge.event.server.ServerStartedEvent;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.server.ServerLifecycleHooks;
@@ -87,6 +88,7 @@ public final class NekoroWorldSetupNeoForge {
             if (MobFilter.onJoin(event.getEntity(), event.loadedFromDisk())) event.setCanceled(true);
         });
         bus.addListener((PlayerTickEvent.Post event) -> WorldEdges.onPlayerTick(event.getEntity()));
+        bus.addListener((ServerTickEvent.Post event) -> RealTime.onServerTick(event.getServer()));
         bus.addListener((LivingFallEvent event) -> {
             if (WorldEdges.safeLanding(event.getEntity())) {
                 event.setDistance(0);

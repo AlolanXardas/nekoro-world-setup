@@ -25,6 +25,7 @@ import dev.xardas.nekoroworldsetup.EnchantExtras;
 import dev.xardas.nekoroworldsetup.EnchantLevels;
 import dev.xardas.nekoroworldsetup.MobFilter;
 import dev.xardas.nekoroworldsetup.NekoroWorldSetup;
+import dev.xardas.nekoroworldsetup.RealTime;
 import dev.xardas.nekoroworldsetup.RecipeTweaks;
 import dev.xardas.nekoroworldsetup.StartSetup;
 import dev.xardas.nekoroworldsetup.WaterFill;
@@ -55,7 +56,10 @@ public final class NekoroWorldSetupFabric implements ModInitializer {
             WaterFill.onLevelTick(level);
             FabricMobs.removeQueued(level);
         });
-        ServerTickEvents.END_SERVER_TICK.register(server -> server.getPlayerList().getPlayers().forEach(WorldEdges::onPlayerTick));
+        ServerTickEvents.END_SERVER_TICK.register(server -> {
+            server.getPlayerList().getPlayers().forEach(WorldEdges::onPlayerTick);
+            RealTime.onServerTick(server);
+        });
         ServerLivingEntityEvents.AFTER_DAMAGE.register((entity, source, base, taken, blocked) -> EnchantExtras.afterDamage(entity, source));
         // mobs saved in chunks; new ones were already checked when they were added (see FabricMobs)
         ServerEntityEvents.ENTITY_LOAD.register((entity, level) -> {
