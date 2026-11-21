@@ -159,9 +159,9 @@ public final class WsConfig {
 
         World(JsonObject o) {
             JsonObject e = JsonFile.obj(o, "enchantments");
-            enchantments = JsonFile.bool(e, "enabled", false);
+            enchantments = JsonFile.bool(e, "enabled", true);
             maxLevel = Math.max(1, Math.min(255, JsonFile.integer(e, "max_level", 10)));
-            skipSingleLevel = JsonFile.bool(e, "skip_single_level", false);
+            skipSingleLevel = JsonFile.bool(e, "skip_single_level", true);
             for (Map.Entry<String, JsonElement> entry : JsonFile.obj(e, "overrides").entrySet()) {
                 try {
                     levelOverrides.put(ResourceLocation.parse(entry.getKey()), Math.max(1, Math.min(255, entry.getValue().getAsInt())));
@@ -193,30 +193,30 @@ public final class WsConfig {
                 }
             }
             JsonObject x = JsonFile.obj(e, "extras");
-            featherFallingFarmland = JsonFile.bool(x, "feather_falling_protects_farmland", false);
-            infinityWithoutArrows = JsonFile.bool(x, "infinity_without_arrows", false);
-            lootingFortuneXp = JsonFile.bool(x, "looting_and_fortune_boost_xp", false);
+            featherFallingFarmland = JsonFile.bool(x, "feather_falling_protects_farmland", true);
+            infinityWithoutArrows = JsonFile.bool(x, "infinity_without_arrows", true);
+            lootingFortuneXp = JsonFile.bool(x, "looting_and_fortune_boost_xp", true);
             xpBonusMax = Math.max(0, JsonFile.integer(x, "xp_bonus_max", 50));
-            noProjectileImmunity = JsonFile.bool(x, "no_projectile_immunity", false);
-            enchantableShears = JsonFile.bool(x, "enchantable_shears", false);
-            enchantableShields = JsonFile.bool(x, "enchantable_shields", false);
+            noProjectileImmunity = JsonFile.bool(x, "no_projectile_immunity", true);
+            enchantableShears = JsonFile.bool(x, "enchantable_shears", true);
+            enchantableShields = JsonFile.bool(x, "enchantable_shields", true);
             mendingBonusPerLevel = Math.max(0, JsonFile.number(x, "mending_bonus_per_level", 0));
 
             JsonObject w = JsonFile.obj(o, "water_fill");
-            waterFill = JsonFile.bool(w, "enabled", false);
+            waterFill = JsonFile.bool(w, "enabled", true);
             waterFillBlocks = IdList.of(JsonFile.strings(w, "blocks"));
             sourcesNeeded = Math.max(1, Math.min(5, JsonFile.integer(w, "sources_needed", 1)));
             floodHoles = JsonFile.bool(w, "flood_holes", true);
 
             JsonObject f = JsonFile.obj(o, "fluid_blocks");
-            fluidBlocks = JsonFile.bool(f, "enabled", false);
+            fluidBlocks = JsonFile.bool(f, "enabled", true);
             noCobblestone = JsonFile.bool(f, "no_cobblestone", true);
             noStone = JsonFile.bool(f, "no_stone", true);
             noBasalt = JsonFile.bool(f, "no_basalt", false);
             noObsidian = JsonFile.bool(f, "no_obsidian", false);
 
             JsonObject b = JsonFile.obj(o, "border_wrap");
-            borderWrap = JsonFile.bool(b, "enabled", false);
+            borderWrap = JsonFile.bool(b, "enabled", true);
             borderDimensions = JsonFile.strings(b, "dimensions");
             centerX = JsonFile.number(b, "center_x", 0);
             centerZ = JsonFile.number(b, "center_z", 0);
@@ -224,13 +224,13 @@ public final class WsConfig {
             moveInside = Math.max(1, Math.min(radius, JsonFile.number(b, "move_inside", 100)));
 
             JsonObject v = JsonFile.obj(o, "void_teleport");
-            voidTeleport = JsonFile.bool(v, "enabled", false);
+            voidTeleport = JsonFile.bool(v, "enabled", true);
             voidDimensions = JsonFile.strings(v, "dimensions");
             voidDepth = Math.max(1, JsonFile.integer(v, "depth", 10));
             noFallDamage = JsonFile.bool(v, "no_fall_damage", true);
 
             JsonObject m = JsonFile.obj(o, "bone_meal");
-            boneMeal = JsonFile.bool(m, "enabled", false);
+            boneMeal = JsonFile.bool(m, "enabled", true);
             boneMealSugarCane = JsonFile.bool(m, "sugar_cane", true);
             boneMealCactus = JsonFile.bool(m, "cactus", true);
             boneMealVines = JsonFile.bool(m, "vines", true);
@@ -297,8 +297,8 @@ public final class WsConfig {
 
         Worldgen(JsonObject o) {
             JsonObject bedrock = JsonFile.obj(o, "flat_bedrock");
-            flatBedrockFloor = JsonFile.bool(bedrock, "floor", false);
-            flatBedrockRoof = JsonFile.bool(bedrock, "roof", false);
+            flatBedrockFloor = JsonFile.bool(bedrock, "floor", true);
+            flatBedrockRoof = JsonFile.bool(bedrock, "roof", true);
             removeOres = JsonFile.bool(o, "remove_ores", false);
             keepOres = IdList.of(JsonFile.strings(o, "keep_ores"));
             removeLavaLakes = JsonFile.bool(o, "remove_lava_lakes", false);
@@ -329,10 +329,10 @@ public final class WsConfig {
             removeOutputs = IdList.of(JsonFile.strings(r, "outputs"));
             removeIds = IdList.of(JsonFile.strings(r, "ids"));
             JsonObject a = JsonFile.obj(o, "add");
-            slabsToBlocks = JsonFile.bool(a, "slabs_to_blocks", false);
-            stairsToBlocks = JsonFile.bool(a, "stairs_to_blocks", false);
-            logsToSticks = JsonFile.bool(a, "logs_to_sticks", false);
-            logsToChests = JsonFile.bool(a, "logs_to_chests", false);
+            slabsToBlocks = JsonFile.bool(a, "slabs_to_blocks", true);
+            stairsToBlocks = JsonFile.bool(a, "stairs_to_blocks", true);
+            logsToSticks = JsonFile.bool(a, "logs_to_sticks", true);
+            logsToChests = JsonFile.bool(a, "logs_to_chests", true);
         }
     }
 
@@ -375,15 +375,15 @@ public final class WsConfig {
 
     private static final String DEFAULT_WORLD = """
             // Nekoro World Setup: rules that change how the world behaves.
-            // Everything is off until you turn it on. /reload applies changes to this file.
+            // Everything is on except real time; each part can be turned off. /reload applies changes to this file.
             {
               // Higher maximum enchantment levels: enchanting table, anvil, books and /enchant.
               "enchantments": {
-                "enabled": false,
+                "enabled": true,
                 // new maximum for every enchantment; enchantments that already go higher keep their own maximum
                 "max_level": 10,
                 // true keeps enchantments that only have level I (Mending, Silk Touch, Infinity...) at I
-                "skip_single_level": false,
+                "skip_single_level": true,
                 // a different maximum for single enchantments, e.g. { "minecraft:sharpness": 15, "minecraft:mending": 1 }
                 "overrides": {},
                 // the anvil refuses anything that costs this many levels or more ("Too Expensive!").
@@ -399,18 +399,18 @@ public final class WsConfig {
                 // small enchantment rules (these work even with "enabled" above off)
                 "extras": {
                   // any Feather Falling stops you from trampling farmland
-                  "feather_falling_protects_farmland": false,
+                  "feather_falling_protects_farmland": true,
                   // a bow with Infinity shoots without any arrow in the inventory
-                  "infinity_without_arrows": false,
+                  "infinity_without_arrows": true,
                   // Looting raises the XP mobs drop and Fortune the XP from ores: level * (level + 1) / 10 times more
                   // (Looting III: +120%, X: +1100%), but at most xp_bonus_max more points (like Universal Enchants)
-                  "looting_and_fortune_boost_xp": false,
+                  "looting_and_fortune_boost_xp": true,
                   "xp_bonus_max": 50,
                   // no short immunity after a projectile hit, so all arrows of Multishot hit
-                  "no_projectile_immunity": false,
+                  "no_projectile_immunity": true,
                   // shears and shields can be enchanted in the enchanting table, not only with an anvil
-                  "enchantable_shears": false,
-                  "enchantable_shields": false,
+                  "enchantable_shears": true,
+                  "enchantable_shields": true,
                   // every Mending level above I repairs this much more per XP point, so it also uses less XP:
                   // 0.5 makes II repair 1.5x and X 5.5x as much, 1.0 makes X repair 10x. 0 = vanilla
                   "mending_bonus_per_level": 0
@@ -420,7 +420,7 @@ public final class WsConfig {
               // Digging a block next to water turns its place into water right away,
               // so beaches and lakes do not end up with water flowing everywhere.
               "water_fill": {
-                "enabled": false,
+                "enabled": true,
                 // only these blocks: ids, whole mods ("minecraft:*") or tags ("#minecraft:sand").
                 // Built blocks like planks or bricks are left out on purpose, so houses next to water cannot get flooded.
                 "blocks": ["#minecraft:sand", "#c:sands", "#minecraft:dirt", "minecraft:gravel", "#c:gravels",
@@ -433,7 +433,7 @@ public final class WsConfig {
 
               // Blocks that lava and water make when they meet. true = that block is not made, the fluids stay as they are.
               "fluid_blocks": {
-                "enabled": false,
+                "enabled": true,
                 "no_cobblestone": true,
                 "no_stone": true,
                 "no_basalt": false,
@@ -444,7 +444,7 @@ public final class WsConfig {
               // Walking out of a square area takes players to the opposite side, like on a round planet.
               // This does not change the vanilla world border: make that one bigger than this area, or leave it off.
               "border_wrap": {
-                "enabled": false,
+                "enabled": true,
                 "dimensions": ["minecraft:overworld"],
                 "center_x": 0,
                 "center_z": 0,
@@ -457,7 +457,7 @@ public final class WsConfig {
 
               // Players who fall into the void appear at the top of the same dimension and fall back down.
               "void_teleport": {
-                "enabled": false,
+                "enabled": true,
                 // empty = every dimension
                 "dimensions": [],
                 // how many blocks below the bottom of the world it happens
@@ -466,7 +466,7 @@ public final class WsConfig {
               },
               // Bone meal also works on plants and blocks vanilla ignores (like Universal Bone Meal). Each one can be turned off.
               "bone_meal": {
-                "enabled": false,
+                "enabled": true,
                 // one block more, up to the height they reach on their own (3)
                 "sugar_cane": true,
                 "cactus": true,
@@ -530,12 +530,12 @@ public final class WsConfig {
 
     private static final String DEFAULT_WORLDGEN = """
             // Nekoro World Setup: world generation. Changes only affect chunks generated afterwards and need a restart.
-            // Everything is off until you turn it on.
+            // Only flat bedrock is on until you turn the rest on.
             {
               // only the lowest (floor) or highest (roof, Nether) layer of bedrock, instead of the bumpy 5 layers
               "flat_bedrock": {
-                "floor": false,
-                "roof": false
+                "floor": true,
+                "roof": true
               },
               // ore veins from vanilla and mods (blocks in #c:ores or with "ore" in their id), and the big
               // copper and iron veins from 1.18. Granite, diorite, andesite, tuff, dirt and gravel blobs stay.
@@ -576,13 +576,13 @@ public final class WsConfig {
               },
               "add": {
                 // 2 slabs on top of each other make 1 block, for every slab that has a 3 blocks -> 6 slabs recipe
-                "slabs_to_blocks": false,
+                "slabs_to_blocks": true,
                 // 4 stairs in a square make 3 blocks, for every stairs that has a 6 blocks -> 4 stairs recipe
-                "stairs_to_blocks": false,
+                "stairs_to_blocks": true,
                 // 2 logs on top of each other make 16 sticks
-                "logs_to_sticks": false,
+                "logs_to_sticks": true,
                 // 8 logs in a ring make 4 chests
-                "logs_to_chests": false
+                "logs_to_chests": true
               }
             }
             """;
